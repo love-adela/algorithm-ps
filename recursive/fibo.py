@@ -28,7 +28,8 @@ def gcd_while(a, b):
     while i < 20:
         temp = previous
         previous = current
-
+        current = temp + current
+        i += 1
 
 # print(fibo(10))
 
