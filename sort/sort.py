@@ -15,7 +15,7 @@ numbers = [int(param) for param in input().split(' ')]
 #     for iteration in range(len(numbers) - (1 + i)):
 #         if numbers[iteration] > numbers[iteration + 1]:
 #             numbers[iteration], numbers[iteration + 1] = numbers[iteration + 1], numbers[iteration]
-# print(' '.join(str(num) for num in numbers))
+# print(' '.join(str(num) for num in numbers))]
 
 # insertion sort - 두 배열을 활용하는 방법 # 첫번째
 # list = []
