@@ -7,9 +7,9 @@ def merge(list1, list2):
         if list1[i] < list2[j]:
             merged_list.append(list1[i])
             i += 1
-        else:
-            merged_list.append(list2[j])
-            j += 1
+        merged_list.append(list2[j])
+        j += 1
+        
     # 남은 원소가 있는지 확인할 수도 있고
     # if i < len(list1):
     #     while i < len(list1):
@@ -31,9 +31,9 @@ def merge(list1, list2):
 def merge_sort(my_list):
     if len(my_list) < 2:
         return my_list
-    else:
-        left = my_list[:len(my_list) // 2]
-        right = my_list[len(my_list) // 2:]   
-        return merge(merge_sort(left), merge_sort(right))
+
+    left = my_list[:len(my_list) // 2]
+    right = my_list[len(my_list) // 2:]   
+    return merge(merge_sort(left), merge_sort(right))
 some_list = [11, 3, 6, 4, 12, 1, 2]
 print(merge_sort(some_list))
