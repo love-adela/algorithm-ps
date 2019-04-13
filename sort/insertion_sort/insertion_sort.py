@@ -1,6 +1,6 @@
 numbers = [int(param) for param in input().split(' ')]
 
-# insertion sort - 두 배열을 활용하는 방법 # 첫번째
+# insertion sort - 두 배열을 활용하는 방법 # 첫 번째
 list = []
 for i in range(len(numbers)):
     is_inserted = False
@@ -13,7 +13,7 @@ for i in range(len(numbers)):
         list.append(numbers[i])
 print(' '.join(str(num) for num in list))
 
-# insertion sort - 두 배열을 활용하는 방법 # 두번째
+# insertion sort - 두 배열을 활용하는 방법 # 두 번째
 sorted = []
 for number in numbers:
     not_inserted = True
@@ -24,6 +24,16 @@ for number in numbers:
             break
     if not_inserted:
         sorted.append(number)
+
+# Insertion Sort - 두 배열을 활용하는 방법  # 세 번째 
+def insertion_sort(numbers: list) -> list:
+    sorted_list = []
+    for number in numbers:
+        i = 0
+        while i < len(sorted_list) and number >= sorted_list[i]:
+            i += 1
+        sorted_list.insert(i, number)
+    return sorted_list         
 
 print(sorted)
 
