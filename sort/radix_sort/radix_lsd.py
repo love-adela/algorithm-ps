@@ -1,19 +1,28 @@
-import random
+# Time Complexity : O(kn)
+# Where k is a constant representing the maximum number of digits for any given number in the data. 
+# 요소 값을 명시적으로 비교하지 않아도 정렬할 수 있다.
+# stable algorithm -> 자리수의 위치가 바뀌면 안된다. 14와 41은 서로 다른 수이기 때문에.
 
-to_sort = [(9 - len(bin(i))) * str(0) + bin(i)[2:] for i in range(128)]
-random.shuffle(to_sort)
+def radix_lsd(input_list):
+    position = 1
 
-for i in range(6, -1, -1):
-	empty_lists = [[], []]
-	
-	for j in range(len(to_sort)):
-		if to_sort[j][i] == str(0):
-			empty_lists[0].append(to_sort[j])
-		else:
-			empty_lists[1].append(to_sort[j])
-	
-	for j in range(64):
-		for k in range(2):
-			to_sort[k * 64 + j] = empty_lists[k][j]
+    while True:
+        empty_lists = [list() for _ in range(10)]
+        is_sorted = True
 
-print(to_sort)
+        for number in input_list:
+            radix = number // position % 10
+            empty_lists[radix].append(number)
+
+            if number // position > 10:
+                is_sorted = False
+
+        position *= 10
+        input_list.clear()
+
+        for numbers in empty_lists:
+                for num in numbers:
+                    input_list.append(num)
+
+        if is_sorted:
+            return input_list
