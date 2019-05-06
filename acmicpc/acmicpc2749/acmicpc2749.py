@@ -21,3 +21,34 @@ def pisano_period(n:int) -> int:
 
 n = int(input())
 print(pisano_period(n))
+
+
+def matrix_fibo(n:int) -> int:
+    SIZE = 2
+    ZERO = [[1, 0], [0, 1]] # 단위행렬
+    BASE = [[1, 1], [1, 0]]
+    
+    def multiply_matrix(a, b, size=SIZE):
+        new = [[0 for _ in range(size)] for _ in range(size)]
+
+        for i in range(size):
+            for j in range(size):
+                for k in range(size):
+                    new[i][j] += a[i][k] * b[k][j]
+        return new
+
+    def get_nth(n):
+        matrix = ZERO.copy()
+        k = 0
+        tmp = BASE.copy()
+
+        while 2 ** k <= n:
+            if n & (1 << k) != 0:
+                matrix = multiply_matrix(matrix, tmp)
+            k += 1
+            tmp = multiply_matrix(tmp, tmp)
+
+        return matrix
+
+    return get_nth(n)[1][0]
+                    
