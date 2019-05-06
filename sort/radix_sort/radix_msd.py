@@ -31,24 +31,3 @@ def radix_sort_msd(data, base=10):
     for d in range(digit):
         data = counting_sort_with_digit(data, d, base)
     return data
-
-
-# def radix_msd(lst):
-#     max_num = max(lst) + 1
-#     count_list = [0] * (max_num)
-#     ordered_list = [0] * len(lst)
-
-#     for num in lst:
-#         count_list[num] += 1
-
-#     for num in range(1, max_num):
-#         count_list[num] = count_list[num - 1] + count_list[num]
-
-#     for num in lst:
-#         count_list[num] -= 1
-#         ordered_list[count_list[num]] = num
-#         print(ordered_list)
-#     return ordered_list
-
-# unordered_list = [95, 1, 656, 72, 35, 83, 760, 944, 876, 684, 767, 709]
-# print(radix_msd(unordered_list))

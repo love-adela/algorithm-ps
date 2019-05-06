@@ -1,15 +1,15 @@
 import random
 
-class PearsonHasher:
-    def __init__(self, length: int, seed):
-        self.length = length
-        generator = random.Random()
-        generator.seed(seed)
-        self.table = list(range(256))
-        generator.shuffle(self.table)
+random_table = [x for x in range(256)]
+random.shuffle(random_table)
 
-    def hash(self, data):
-        result = len(data) % 256
-        for d in data:
-            hash_result = self.table[(data[0] + d) % 256]
-        return result
+def pearson_hash(character:str, random_table:dict) -> int:
+    hash = len(character) % len(random_table)
+
+    for i in character:
+        hash = random_table[hash^ord(i)]
+    return hash
+
+
+# Test
+print(pearson_hash(input("유니코드 코드 포인트로 변환하고 싶은 문자열을 입력하세요.\n"), random_table))
