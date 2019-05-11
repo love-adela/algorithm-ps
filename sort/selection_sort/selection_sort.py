@@ -1,6 +1,6 @@
 # 5 12 23 34 45 54 56 234 345 3432
 # 23 34 234 5 12 345 3432 45 54 56
-numbers = [int(param) for param in input().split(' ')]
+numbers = [int(param) for param in input().split()]
 
 # selection sort - (1)
 for i in range(len(numbers)):

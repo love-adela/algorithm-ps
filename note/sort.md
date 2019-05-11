@@ -20,11 +20,11 @@ numbers = [int(param) for param in input().split(' ')]
 
 ### 1.1 비교 정렬(Comparison Sort)
 
-    * Quicksort / Heapsort /Shellsort /Merge sort / Introsort / Insertion sort / Selection sort / Bubble sort / Odd–even sort / Cocktail shaker sort / Cycle sort / Merge insertion (Ford–Johnson) sort / Smoothsort / Timsort
+    * Quicksort / Heapsort / Merge sort / Insertion sort / Selection sort / Bubble sort / Odd–even sort / Cocktail shaker sort / Cycle sort / Merge insertion (Ford–Johnson) sort / Introsort / Smoothsort / Timsort / Shellsort
 
 #### 1.1.1 버블 정렬(Bubble Sort)
 
-버블 정렬은 배열의 첫 원소부터 순차적으로 진행하며, 현재 원소가 그다음 원소의 값보다 크면 두 원소를 바꾸는 작업을 반복한다. 이런 식으로 배열을 계속 살펴보면서 완전히 정렬된 상태가 될 때까지 반복한다.
+버블 정렬은 배열의 첫 원소부터 순차적으로 진행하며, 현재 원소가 그 다음 원소의 값보다 크면 두 원소를 바꾸는 작업을 반복한다. 이런 식으로 배열을 계속 살펴보면서 완전히 정렬된 상태가 될 때까지 반복한다.
 
     * 평균 및 최악 실행시간 : O(n^2)
     * 메모리 : O(1)
