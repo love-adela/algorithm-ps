@@ -11,6 +11,5 @@ def pearson_hash(character:str, random_table:list) -> int:
         hash = random_table[hash^ord(i)]
     return hash
 
-
 # Test
 print(pearson_hash(input("유니코드 코드 포인트로 변환하고 싶은 문자열을 입력하세요.\n"), table))
