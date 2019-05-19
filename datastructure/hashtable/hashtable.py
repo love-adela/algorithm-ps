@@ -1,73 +1,67 @@
+from pearson_hash import pearson_hash
+
 # Open Addressing
-class Node:
-  def __init__(self, key, value):
-    self.key = key
-    self.value = value
+# 업데이트, 삭제, 삽입, 
 
+class OpenAddressing:
+    def __init__(self, size):
+        self.size = size
+        # self.size = len(random_table)
+        self.hashtable = [None] * self.size
+        self.bucket = [None] * self.size
 
-class HashTable():
+    def put(self, key, value):
+        initial_position = self.pearson_hash(key, table)
+        i = initial_position
+        j = 0
 
-  def __init__(self, size=7):
-    self._table = [[] for _ in range(size)]
-    self.size = size
+        if i == initial_position:
+            break
 
-  def set(self, key, value):
+        while True:
+            if self.hashtable[i] == None:
+                self.hashtable[i] = key
+                self.bucket[i] = value
+                return
+            if self.hashtable[i] == key:
+                self.bucket[i] = data
+                return
+            
+            j += 1
+            i = (initial_position + j) % self.size
     
-    new_node = Node(key, value)
+    def get(self, key:str): #탐색
+        initial_position = self.pearson_hash(key, table)
+        i = initial_position
+        j = 1
+        while self.hashtable[i] != None:
+            if self.hashtable[i] == key:
+                return self.bucket[i]
+            i = (initial_position + j) % self.size
+            j += 1
+            if i == initial_position:
+                return None
+        return None
 
-    bucket, item, _ = self.find(key)
-    
-    if item == None:
-      bucket.append(new_node)
-    else:
-      item = new_node
-    
+    def print_hash_table(self):
+        for i in range(self.size):
+            print('{:4}'.format(str(self.hashtable[i])), ' ', end='')
+        print()
+        for i in range(self.size):
+            print('{:4}'.format(str(self.hashtable[i])), ' ', end='')
+        print()
 
+hash_object = OpenAddressing(len(random_table))
+hash_object.put(, hash)
+hash_object.put(, hash)
+hash_object.put(, hash)
+hash_object.put(, hash)
+hash_object.put(, hash)
+hash_object.put(, hash)
+hash_object.put(, hash)
 
-  def get(self, key):
-
-    _, item, _ = self.find(key)
-    if item == None:
-      return None
-
-    return item.value
-
-
-  def delete(self, key):
-
-    box, item, in_index = self.find(key)
-    if item is None:
-      return False
-    
-    del_item = box.pop(in_index)
-    return del_item.value
-
-
-  def find(self, key):
-    
-    hash_key = hash(key)
-    index = hash_key % self.size
-
-    bucket = self._table[index]
-    
-    cnt = len(bucket)
-    for in_index in range(0, cnt):
-      item = bucket[in_index]
-      if item.key == key:
-        return bucket, item, in_index 
-
-    return bucket, None, -1
-
-
-hash_table = HashTable()
-
-def hash_set(key, value):
-  return hash_table.set(key, value)
-    
-
-def hash_get(key):
-  return hash_table.get(key)
-
-
-def hash_delete(key):
-  return hash_table.delete(key)
+print("탐색 결과":)
+print('{}의 data = ', hash_object({}))
+print('{}의 data = ', hash_object({}))
+print('해쉬테이블:')
+hash_table.print_table()
