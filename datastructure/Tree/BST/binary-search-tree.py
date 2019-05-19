@@ -16,11 +16,11 @@ BST = [
 
 # ======================================================================
 
-def find(tree: tuple, query: str):
+def find(tree: list, query: str):
     if tree is None:
         return None
     
-    # Invariant : Tree = Tuple
+    # Invariant : Tree = List
     idx, left, right = tree
     key, value = TABLE[idx]
 
@@ -38,13 +38,13 @@ while True:
     print()
 
 # ======================================================================
-def insert(tree: tuple, new_value: str) -> tuple:
+def insert(tree: list, new_value: str) -> list:
     new_tree = insert(tree, new_value)
 
     if tree is None:
         return new_tree
         
-    # Invariant : Tree = Tuple
+    # Invariant : Tree = List
     if new_value <= tree.query:
         if tree.left:
             insert(tree.left, new_value)
@@ -63,7 +63,7 @@ while True:
     print()
 
 # ======================================================================
-def delete(tree: tuple, deletion_value: str) -> tuple:
+def delete(tree: list, deletion_value: str) -> list:
     new_tree = delete(tree, deletion_value)
     if tree is None:
         return new_tree
@@ -100,7 +100,7 @@ def take():
 
 
 # ======================================================================
-def update(tree: tuple, old_value: str, new_value: str) -> list:
+def update(tree: list, old_value: str, new_value: str) -> list:
     if tree is None:
         return []
     
@@ -119,7 +119,7 @@ while True:
     print()
 
 # ======================================================================
-def range_query(tree: tuple, lo: str, hi: str) -> list:
+def range_query(tree: list, lo: str, hi: str) -> list:
     ''' 
     memo : 함수를 쓸 때 lo < hi가 되도록 짜주세요.
     '''
