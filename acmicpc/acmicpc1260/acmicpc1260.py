@@ -25,9 +25,6 @@ for _ in range(m):
     x, y = map(int, input().split())
     matrix[x][y] = 1
     matrix[y][x] = 1
-    # link = list(map(int, input().split()))
-    # matrix[link[0]][link[1]] = 1
-    # matrix[link[1]][link[0]] = 1
 
 print(*dfs(v, matrix, []))
 print(*bfs(v))
