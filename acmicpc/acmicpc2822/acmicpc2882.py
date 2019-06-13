@@ -9,4 +9,4 @@ index = []
 for i in largest:
     index.append(str(score.index(i) + 1))
 
-print(' '.join(sorted(index)))
+print(' '.j(oin(sorted(index)))
