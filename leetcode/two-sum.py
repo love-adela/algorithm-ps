@@ -13,6 +13,18 @@ class Solution:
                 if nums[i] + nums[j] == target:
                     return [i, j]
 
+    def twoSum2(self, nums, target):
+        hash_table = {}
+        for i, num in enumerate(nums):
+            if target - num in hash_table:
+                print(hash_table)
+                print(target - num)
+                return [hash_table[target - num], i]
+                break
+            hash_table[num] = i
+        return []
 
 sol = Solution()
 print(sol.twoSum([1, 3, 5, 6], 8))
+print(sol.twoSum1([1, 3, 5, 6], 8))
+print(sol.twoSum2([1, 3, 5, 6], 8))
