@@ -16,11 +16,9 @@ class Solution:
     def twoSum2(self, nums, target):
         hash_table = {}
         for i, num in enumerate(nums):
+            print(hash_table)
             if target - num in hash_table:
-                print(hash_table)
-                print(target - num)
                 return [hash_table[target - num], i]
-                break
             hash_table[num] = i
         return []
 
