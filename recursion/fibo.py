@@ -1,27 +1,40 @@
 # 행렬로 푸는 풀이: 최적해
+    # a[0] a[1]      b[0] b[1]
+    # a[2] a[3]      b[2] b[3]
+
+def multiply_matrix(a, b):
+    return (
+            a[0]*b[0] + a[1]*b[2], 
+            a[0]*b[1] + a[1]*b[3],
+            a[2]*b[0] + a[3]*b[2],
+            a[2]*b[1] + a[3]*b[3]
+            )
+
 def fibo_matrix(n):
-    if n < 0:
-        print("정수를 입력하세요")
-    
-    current_item = 0
-    next_item = 1
-    for _ in range(n):
-        (current_item, next_item) = (next_item, current_item + next_item)
-    return current_item
-
-print(fibo_matrix(7))
-
-# Memoization 하는 풀이 : O(n)
-def fibo(n):
-    # Base Case
     if n == 0:
-        return 1
+        return (1, 0, 0, 1)
     if n == 1:
-        return 1
-    dict = {}
-    if n in dict:
-        return dict[n] # memoization
-    answer = fibo(n - 1) + fibo(n - 2)
-    dict[n] = answer
-    return answer
+        return (1, 1, 1, 0)
 
+    a = fibo_matrix(n//2)
+    a_square = multiply_matrix(a, a)
+    if n % 2 == 0:
+        return a_square 
+    else:
+        return multiply_matrix(a_square, (1, 1, 1, 0))
+
+def fibo(n):
+    if n == 0:
+        return 0
+    return fibo_matrix(n-1)[0]
+
+print(fibo(0))
+print(fibo(1))
+print(fibo(2))
+print(fibo(3))
+print(fibo(4))
+print(fibo(5))
+print(fibo(6))
+print(fibo(7))
+print(fibo(8))
+print(fibo(9))
