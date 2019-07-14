@@ -5,7 +5,7 @@ def fibo_matrix(n):
     
     current_item = 0
     next_item = 1
-    for i in range(n):
+    for _ in range(n):
         (current_item, next_item) = (next_item, current_item + next_item)
     return current_item
 
