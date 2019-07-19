@@ -9,6 +9,7 @@ a, b = map(int, input().split())
 [int(param) for param in input().split()]
 # input : 32423 324792384 23489128
 # output : [32423, 324792384, 23489128]
+list(map(int, input().split())) # 아주 조금 더 빠르다
 ```
 
 # list 아이템을 연산된 시퀀스로 출력하는 방법
