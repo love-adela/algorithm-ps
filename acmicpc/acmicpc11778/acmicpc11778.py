@@ -13,6 +13,13 @@ def multiply_matrix(a, b):
     )
 
 def fibo_matrix(n):
+    m = gcd(p, q)
+    two_square_n = multiply_matrix(
+
+    while m > 0:
+        if m % 2 != 0:
+            return 
+
     if n == 0:
         return (1, 0, 0, 1)
     if n == 1:
