@@ -2,15 +2,14 @@ import sys
 read = lambda: sys.stdin.readline()
 
 N = int(read())
-
-dp = []
 W = [] 
 for i in range(N):
     edge = [int(x) for x in read().split()]
     W.append(edge)
-# print(W) [[0, 10, 15, 20], [5, 0, 9, 10], [6, 13, 0, 12], [8, 8, 9, 0]]
 
+dp = [[]for _ in range(N)]
 dp[0][1] = 1
+
 for i in range(1<<N):
     for j in range(N):
         if not i & (1<<j):
