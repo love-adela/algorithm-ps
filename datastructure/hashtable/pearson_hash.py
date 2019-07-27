@@ -1,6 +1,6 @@
 import random
 
-table = [x for x in range(256)] # 해쉬값을 쓰기 위해서 랜덤하게 ㅇㅇ를 생성
+look_up_table = [x for x in range(256)] # 해쉬값을 쓰기 위해서 랜덤하게 ㅇㅇ를 생성
 # table = list(range(256))
 random.shuffle(table) # 고정시키려면 seed 사용할 것
 
