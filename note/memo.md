@@ -1,4 +1,13 @@
+# 문자열의 각 문자를 리스트에 담기
+
+* 'string' => ['s', 't', 'r', 'i', 'n', 'g']
+
+```
+[letter for letter in string]
+```
+
 # 두 문자에 input을 각각 integer casting 하는 방법
+
 ```
 a, b = map(int, input().split())
 ```
