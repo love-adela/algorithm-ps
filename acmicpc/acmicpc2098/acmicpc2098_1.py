@@ -9,7 +9,6 @@ for i in range(N):
 
 dp = [[0] * N for _ in range(N)]
 dp[0][1] = 1
-dp[1][0] = 1 # 양방향 연결
 
 for i in range(1<<N):
     for j in range(N):
