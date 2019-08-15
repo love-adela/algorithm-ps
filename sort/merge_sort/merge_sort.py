@@ -7,8 +7,9 @@ def merge(list1, list2):
         if list1[i] < list2[j]:
             merged_list.append(list1[i])
             i += 1
-        merged_list.append(list2[j])
-        j += 1
+        else:
+            merged_list.append(list2[j])
+            j += 1
         
     # 남은 원소가 있는지 확인할 수도 있고
     # if i < len(list1):
