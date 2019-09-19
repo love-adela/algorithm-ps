@@ -1,4 +1,3 @@
 import sys
-input = sys.stdin.readline
-words = list(input().split())
-print(len(words))
+words = sys.stdin.readline().strip()
+print(0 if len(words) == 0 else words.count(' ') +1)
