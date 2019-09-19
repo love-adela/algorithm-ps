@@ -1,29 +1,25 @@
 import sys
-n, m = map(int, input().split())
-squares = [list(sys.stdin.readline().rstrip()) for _ in range(n)]
-min_num = None
-for i in range(n-7):
-    for j in range(m-7):
-        count1, count2 = 0, 0
-        for k in range(i, i+8):
-            for l in range(j, j+8):
-                if (k+l-i-j) % 2 == 0 and squares[k][l] == 'B':
-                    count1 += 1
-                if (k+l-i-j) % 2 != 0 and squares[k][l] == 'W':
-                    count1 += 1
-        for k in range(i, i+8):
-            for l in range(j, j+8):
-                if (k+l-i-j) % 2 == 0 and squares[k][l] == 'W':
-                    count2 += 1
-                if (k+l-i-j) % 2 != 0 and squares[k][l] == 'B':
-                    count2 += 1
-        count1 = min(count1, 64-count1)
-        count2 = min(count2, 64-count2)
-        min_count = min(count1, count2)
-        
-        if min_num is None:
-            min_num = min_count
-        else:
-            min_num = min_count if min_num > min_count else min_num
 
-print(min_num)
+n, m = map(int, sys.stdin.readline().split())
+
+b = [[0 for _ in range(m+1)] for _ in range(n+1)]
+
+for i in range(n):
+    status = sys.stdin.readline().strip()
+    for j in range(m):
+        temp = (i+j) % 2 
+        if status[j] == 'B':
+            temp = 1-temp
+        b[i+1][j+1] = b[i][j+1] + b[i+1][j] - b[i][j] + temp
+
+max_value = 32
+
+for i in range(8, n+1):
+    for j in range(8, m+1):
+        x = b[i][j] + b[i-8][j-8] - b[i][j-8] - b[i-8][j]
+        if x > max_value:
+            x = 64-x
+        if x < max_value:
+            max_value = x
+print(max_value)
+
