@@ -1,13 +1,14 @@
+from collections import Counter
+
 def solution(participant:list, completion:list)->str:
     answer = ''
-    runners = {}
-    for p in participant:
-        runners[p] = runners.get(p, 0) + 1
-    for p in completion:
-        runners[p] -= 1 
-    for p, c in runners.items():
-        if c > 0:
-            answer = p
+
+    runners = Counter(participant)
+    for runner in completion:
+        runners[runner] -= 1 
+    for runner, count in runners.items():
+        if count > 0:
+            answer = runner 
             return answer
 
 
