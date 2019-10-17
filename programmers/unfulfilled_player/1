@@ -1,9 +1,0 @@
-#    assert solution(
-#        ['marina', 'josipa', 'nikola', 'vinko', 'filipa'],
-#        ['josipa', 'filipa', 'marina', 'nikola']
-#    ) == 'vinko'
-#    assert solution(
-#        ['mislav', 'stanko', 'mislav', 'ana'],
-#        ['stanko', 'ana', 'mislav']
-#    ) == 'mislav'
-# print(test_solution())
