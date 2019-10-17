@@ -1,15 +1,7 @@
 from collections import Counter
 
 def solution(participant:list, completion:list)->str:
-    answer = ''
-
-    runners = Counter(participant)
-    for runner in completion:
-        runners[runner] -= 1 
-    for runner, count in runners.items():
-        if count > 0:
-            answer = runner 
-            return answer
+    return next((Counter(participant) - Counter(completion)).elements())
 
 
 def test_solution():
