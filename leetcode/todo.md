@@ -1,4 +1,4 @@
-* [ ] https://leetcode.com/problems/move-zeroes/
+* [x] https://leetcode.com/problems/move-zeroes/
 * [x] https://leetcode.com/problems/palindrome-number/
 * [ ] https://leetcode.com/problems/search-insert-position/
 * [ ] https://leetcode.com/problems/remove-duplicates-from-sorted-list/
