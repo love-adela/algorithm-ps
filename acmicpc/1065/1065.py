@@ -1,16 +1,12 @@
-def is_hansu(num)->bool:
-    nums = list(map(int, num))
-    if len(num) != 1 and len(num) != 2:
-        for i in range(1, len(num)-1):
-            if nums[1] - nums[2] == nums[0] - nums[1]:
-                pass
-            else:
-                return False
-    return True
+def get_hansu(N):
+    count = 0 
+    for i in range(1, N+1):
+        if i<100:
+            count+=1
+        elif 99<i<1000:
+            if (i//100)+(i%10) == 2*(i//10-(i//100)*10):
+                count += 1
+    return count
 
-N = input()
-count = 0
-for i in range(1, int(N)+1):
-    if is_hansu(str(i)):
-        count += 1
-print(count)
+print(get_hansu(int(input())))
+
