@@ -1,8 +1,8 @@
+import sys
 max_num = 100001
 visited = [False] * max_num 
-# queue = [정점번호, 해당 정점 번호까지의 거리]
 queue = []
-A, B, N, M = map(int, input().split())
+A, B, N, M = map(int, sys.stdin.readline().split())
 
 queue.append((N, 0))
 visited[N] = True
