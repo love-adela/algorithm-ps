@@ -1,4 +1,3 @@
-import math
-R = int(input())
-print('%.4f' % (math.pi *R**2))
-print('%.4f' % (R*R*2))
+n=int(input())**2
+print(n*3.14159265359)
+print(n*2.0)
