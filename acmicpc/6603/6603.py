@@ -5,7 +5,7 @@ from itertools import combinations
 flag = True
 while flag:
     elem = list(map(int, sys.stdin.readline().split()))
-    e = int(elem[0])
+    e = elem[0]
     if e == 0:
         flag = False
         break
