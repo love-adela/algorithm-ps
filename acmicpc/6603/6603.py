@@ -4,7 +4,7 @@ from itertools import combinations
 
 flag = True
 while flag:
-    elem = list(map(int, sys.stdin.readline().strip().split()))
+    elem = list(map(int, sys.stdin.readline().split()))
     e = int(elem[0])
     if e == 0:
         flag = False
@@ -12,3 +12,4 @@ while flag:
     for i in combinations(elem[1:], 6):
         print(' '.join(map(str, i)))
     print()
+
