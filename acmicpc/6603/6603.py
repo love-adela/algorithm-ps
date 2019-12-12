@@ -2,14 +2,12 @@
 import sys
 from itertools import combinations
 
-flag = True
-while flag:
-    elem = list(map(int, sys.stdin.readline().split()))
-    e = elem[0]
-    if e == 0:
-        flag = False
+while True:
+    case = list(map(int, sys.stdin.readline().split()))
+    if case[0] == 0:
         break
-    for i in combinations(elem[1:], 6):
+    for i in combinations(case[1:], 6):
         print(' '.join(map(str, i)))
     print()
+    
 
