@@ -1,10 +1,5 @@
 import sys
 read = sys.stdin.readline
-T = int(input())
-for _ in range(T):
-    B, D = read().split() 
-    B = int(B)
-    num = 0
-    for i in D: 
-        num += int(i, B) % (B-1)
-    print(num % (B-1))
+for _ in range(int(read())):
+    B,D=read().split()
+    print(sum(map(int,D))%(int(B)-1))
