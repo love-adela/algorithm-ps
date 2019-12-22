@@ -8,7 +8,7 @@
 
 ### 1.2 How to get GCD(Greatest Common Divisor) effectively?
 
-#### [Euclidean Division]()
+#### [Euclidean Division](https://github.com/love-adela/algorithm/blob/master/birdseye/numbertheory/euclidean.py)
 
 * [Description](https://en.wikipedia.org/wiki/Euclidean_division)
 * Time Complexity : O(log(n+m))
