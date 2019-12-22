@@ -1,12 +1,12 @@
 import sys
 sys.setrecursionlimit(10000)
 
-def dsf(i:int, G:list, V:list, N:int):
+def dfs(i:int, G:list, V:list, N:int):
     V[i] = True
     for j in range(1, N+1):
         if V[j] == True or G[i][j] == 0:
             continue
-        dsf(j, G, V, N)
+        dfs(j, G, V, N)
 
 def main():
     adj = [[0]*1001 for _ in range(1001)]
@@ -21,7 +21,7 @@ def main():
 
     for i in range(1, N+1):
         if visited[i] == 0:
-            dsf(i, adj, visited, N)
+            dfs(i, adj, visited, N)
             count += 1
 
     print(count)

@@ -1,25 +1,7 @@
-from itertools import permutations
+# pandita's algorithm : https://en.wikipedia.org/wiki/Permutation#Generation_in_lexicographic_order
 
-N = int(input())
-params = tuple(input().split())
+n = int(input())
+permutations = list(map(int, input().split()))
 
-def is_matched(iterator):
-    params_list = sorted(list(permutations(iterator)))
-    for i in range(len(params_list)):
-        if params_list[i] == params:
-            return True
-#            if params_list[-1] == params:
-#                print(-1)
-#                break
-        else:
-            return False
-#                print(' '.join(params_list[i+1]))
-#                break
-
-if is_matched(params) is True:
-    print(' '.join(params
-else:
-    print(-1)
-
-
+def is_last_element(param:list)->bool:
 

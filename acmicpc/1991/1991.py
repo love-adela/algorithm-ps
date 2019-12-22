@@ -15,7 +15,6 @@ def preorder(nodes:dict, root:str)->str:
     while stack:
         node = stack.pop()
         result += node
-
         if nodes[node][1] != '.':
             stack.append(nodes[node][1])
         if nodes[node][0] != '.':
