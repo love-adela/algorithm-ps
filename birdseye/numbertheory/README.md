@@ -25,6 +25,7 @@ When N is divided from 2 to N ** 1/2 (square root), the result of modulo computa
 * Determine which number is likely to be prime number.
 * [Description](https://en.wikipedia.org/wiki/Fermat%27s_little_theorem)
 * **소수 P에 대해 N < P의 N^P % P = N이라는 식이 성립**
+
 소수 5보다 작은 수(1, 2, 3, 4)를 각각 5제곱해보자
 
 ```
