@@ -1,4 +1,4 @@
-def dfs(now, graph, visited)->list:
+def dfs(now:int, graph:list, visited:list)->list:
     visited += [now]
 
     for i in range(len(graph[now])):
@@ -7,7 +7,7 @@ def dfs(now, graph, visited)->list:
     return visited
 
 
-def bfs(start)->list:
+def bfs(start:int)->list:
     queue = [start]
     visited = [start]
     while queue:
@@ -28,4 +28,3 @@ for _ in range(m):
 
 print(*dfs(v, matrix, []))
 print(*bfs(v))
-
