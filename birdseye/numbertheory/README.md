@@ -44,3 +44,9 @@ When N is divided from 2 to N ** 1/2 (square root), the result of modulo computa
 2 ^ 6 (= 64) % 6 = 4
 1 ^ 6 (= 1) % 6 = 1
 ```
+
+[Miller-Rabin Test]()
+
+* Used in RSA cryptosystem.
+* Improved Fermat test.
+* This method repeats the test to determine the number as a decimal in a phase where the non-numeric probability is less than 0.5^80.
