@@ -14,7 +14,6 @@ check[0][0] = True
 dist[0][0] = 1
  
 while q:
-    print(q)
     x, y = q.popleft()
     for k in range(4):
         nx, ny = x+dx[k], y+dy[k]
