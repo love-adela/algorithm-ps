@@ -1,26 +1,16 @@
-def bfs(v:int):
-    visited = [False] * 100001
-    q = [v]
-    count = 0
-    state = False
+from collections import deque
+N, K = map(int, input().split())
 
-    while q:
-        for _ in range(len(q)):
-            v = q.pop(0)
-            if not visited[v]:
-                visited[v] = True
-                if v == M:
-                    state = True
-                    break
-                if v - 1 >= 0 :
-                    q.append(v-1)
-                if v + 1 <= 1000000:
-                    q.append(v+1)
-                if v * 2 <= 1000000:
-                    q.append(v*2)
-        if state:
-            return count
-        count += 1
+Max = 10 ** 5 
+D = [-1]*(Max+1)
+D[N] = 0
+q = deque()
+q.append(N)
+while q:
+    x = q.popleft()
+    for nx in [x-1, x+1, 2*x]:
+        if 0<=nx<=Max and D[nx]==-1:
+            q.append(nx)
+            D[nx] = D[x]+1
 
-N, M = map(int, input().split())
-print(bfs(N))
+print(D[K])
