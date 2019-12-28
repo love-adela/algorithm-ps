@@ -4,4 +4,6 @@ n = int(input())
 permutations = list(map(int, input().split()))
 
 def is_last_element(param:list)->bool:
+    pass
+
 
