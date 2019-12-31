@@ -47,7 +47,7 @@ for i in range(N):
             tomato_count += 1
             tomato.append((i, j))
         elif value == -1:
-            empty_count += 1
+                empty_count += 1
     
 if tomato_count == 0:
     print(-1)
