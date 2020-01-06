@@ -6,7 +6,6 @@ def is_vps(string:str)->str:
     index = 0
     
     while len(characters) != 0:
-    #    print(characters)
         if index < 0:
             break
         c = characters.pop()
@@ -25,4 +24,3 @@ while T:
     parentheses = sys.stdin.readline()
     print(is_vps(parentheses))
     T -=1
-
