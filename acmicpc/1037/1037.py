@@ -3,8 +3,8 @@ def main():
     next(stdin)
     input = stdin.read()
 
-    params = sorted(list(map(int, input.split())))
-    print(params[0]* params[-1])
+    params = list(map(int, input.split()))
+    print(min(params)* max(params))
 
     # 12의 약수: 2, 3, 4, 6
 
