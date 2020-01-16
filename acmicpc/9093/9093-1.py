@@ -41,7 +41,6 @@ class Stack(object):
 def reverse_with_stack(sentence):
     s = Stack()
     for i in range(len(sentence)):
-
         if sentence[i] == ' ' or sentence[i]=='\n':
             while not s.is_empty():
                 print(s.peek(), end='')

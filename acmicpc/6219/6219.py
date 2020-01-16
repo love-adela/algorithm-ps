@@ -1,10 +1,9 @@
 A, B, D = map(int, input().split())
 
 def eratosthenes(m, n, k):
-    MAX = 4000000
+    MAX, count = 4000000, 0
     check = [0] * (MAX+1)
     check[0] = check[1] = True
-    count = 0
 
     for i in range(2, MAX+1):
         if not check[i]:
