@@ -1,3 +1,2 @@
-l = input()
-if l == l[::-1]: print('true')
-else: print('false')
+i=input()
+print(str(i==i[::-1]).lower())
