@@ -5,4 +5,3 @@ while flag:
         flag = False
         break
     print(statement[::-1])
-
