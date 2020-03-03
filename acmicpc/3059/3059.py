@@ -1,11 +1,13 @@
+import sys
 T = int(input())
-for _ in range(T):
-    s = input()
-    result = 0
+string = sys.stdin.read().splitlines()
+s = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+l = []
 
-    for i in range(ord('A'), ord('Z')+1):
-        for j in range(len(s)):
-            if ord(s[j]) == i:
-                result += ord(s[j])
-                break
-    print(2015 - result)
+for i in range(T):
+    result = 0
+    for c in s:
+        if string[i].find(c) == -1:
+            result += ord(c)
+    l.append(result)
+print('\n'.join(map(str, l)))
