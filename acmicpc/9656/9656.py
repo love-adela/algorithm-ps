@@ -1,3 +1,1 @@
-N = int(input())
-if N % 2 == 0: print('SK')
-else: print('CY')
+print('SK' if int(input()) % 2 == 0 else 'CY')
