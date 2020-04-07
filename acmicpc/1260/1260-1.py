@@ -2,6 +2,9 @@ import sys
 from collections import deque
 read = lambda: sys.stdin.readline()
 N, M, V = map(int, read().split())
+# 정점의 개수 : N
+# 간선의 개수 : M
+# 탐색 시작할 정점 번호 : V
 
 neighbor = [[] for _ in range(N+1)] 
 for i in range(M):
