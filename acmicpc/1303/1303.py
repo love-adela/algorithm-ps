@@ -1,6 +1,7 @@
 import sys
-N, M = map(int, sys.stdin.readline().split())
-coordinates = [[param for param in input()] for _ in range(M)] 
+read = lambda : sys.stdin.readline()
+N, M = map(int, read().split())
+coordinates = [[*read()] for i in[0]*M]
 visited = [[False] * N for _ in range(M)]
 white, black = 0, 0
 
