@@ -1,19 +1,19 @@
-N, M = map(int, input().split())
+import sys
+N, M = map(int, sys.stdin.readline().split())
 coordinates = [[param for param in input()] for _ in range(M)] 
 visited = [[False] * N for _ in range(M)]
 white, black = 0, 0
 
-def bfs(x, y, curr):
+def dfs(x, y, item):
     candidates = [(x, y)]
+    visited[x][y] = True
     cnt = 1 
-
     while candidates:
-        _, *candidates = candidates
-        print(candidates)
+        curr = candidates.pop()
         for delta_x, delta_y in (-1, 0), (1, 0), (0, -1), (0, 1):
-            new_x, new_y = x+delta_x, y+delta_y
+            new_x, new_y = curr[0]+delta_x, curr[1]+delta_y
             if 0 <=new_x<M and 0<= new_y < N:
-                if not visited[new_x][new_y] and coordinates[new_x][new_y] == curr:
+                if not visited[new_x][new_y] and coordinates[new_x][new_y] == item:
                     visited[new_x][new_y] = True
                     candidates.append((new_x, new_y))
                     cnt += 1
@@ -22,9 +22,8 @@ def bfs(x, y, curr):
 for i in range(M):
     for j in range(N):
         if not visited[i][j]:
-            res = bfs(i, j, coordinates[i][j])
+            res = dfs(i, j, coordinates[i][j])
             if coordinates[i][j] == 'W': white += res**2
             else: black+= res**2
 
 print(white, black)
-
