@@ -1,19 +1,30 @@
-import sys
-from collections import deque
-read = lambda: sys.stdin.readline()
-
 N, M = map(int, input().split())
+coordinates = [[param for param in input()] for _ in range(M)] 
+visited = [[False] * N for _ in range(M)]
+white, black = 0, 0
 
-#neighbor = [
-#        [5],[], [3, 7], [2, 4, 8], [3, 9], [0, 6], [5, 7], [2, 6, 8], [3, 7, 9], [4, 8], 
-#        [11, 15], [10, 12, 16], [11, 13, 17], [12, 14], [13], [10, 16], [11, 15, 17], [12, 16],
-#        [19, 23], [18, 24], [21], [20, 22], [21, 23], [18, 22, 24], [19, 23]
-#        ]
-lst = []
-for i in range(N):
-    lst.append([param for param in input()])
+def bfs(x, y, curr):
+    candidates = [(x, y)]
+    cnt = 1 
 
-print(lst)
-node = [[(i*M)+j for j in range(M)] for i in range(N)] 
-print(node)
+    while candidates:
+        _, *candidates = candidates
+        print(candidates)
+        for delta_x, delta_y in (-1, 0), (1, 0), (0, -1), (0, 1):
+            new_x, new_y = x+delta_x, y+delta_y
+            if 0 <=new_x<M and 0<= new_y < N:
+                if not visited[new_x][new_y] and coordinates[new_x][new_y] == curr:
+                    visited[new_x][new_y] = True
+                    candidates.append((new_x, new_y))
+                    cnt += 1
+    return cnt
+
+for i in range(M):
+    for j in range(N):
+        if not visited[i][j]:
+            res = bfs(i, j, coordinates[i][j])
+            if coordinates[i][j] == 'W': white += res**2
+            else: black+= res**2
+
+print(white, black)
 
