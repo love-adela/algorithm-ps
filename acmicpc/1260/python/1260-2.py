@@ -3,7 +3,7 @@ import sys
 read = lambda: sys.stdin.readline()
 N, M, V = map(int, read().split())
 
-graph = dict()
+graph = {v:[] for v in range(1, N+1)}
 for _ in range(M):
     u, v = map(int, read().split())
     if u in graph:
@@ -53,4 +53,3 @@ def bfs(graph, start):
 
 res = bfs(graph, V)
 print(' '.join([str(param) for param in res]))
-
