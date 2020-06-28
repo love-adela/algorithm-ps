@@ -13,6 +13,7 @@ for i in range(M):
     neighbor[b].append(a)
 
 neighbor = [sorted(param) for param in neighbor]
+print(neighbor)
 visited = [False]*(N+1)
 
 def dfs(n):
