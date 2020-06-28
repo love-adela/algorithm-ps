@@ -1,4 +1,4 @@
-def dfs(now:int, graph:list, visited:list)->list:
+
     visited += [now]
 
     for i in range(len(graph[now])):
