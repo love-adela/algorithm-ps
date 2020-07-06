@@ -1,16 +1,15 @@
 N, M = map(int, input().split())
 
-def dfs(selected, length):
+def get_all_seq(selected, length):
     if length == M:
         print(' '.join(list(map(str, selected))))
+    elif length == 0:
+        for item in sequence:
+            get_all_seq(selected + [item], length+1)
     else:
-        if length == 0:
-            for item in sequence:
-                dfs(selected + [item], length+1)
-        else:
-            for item in sequence:
-                if item > selected[-1]:
-                    dfs(selected+[item], length+1)
+        for item in sequence:
+            if item > selected[-1]:
+                get_all_seq(selected+[item], length+1)
 
 sequence = sorted([int(param) for param in input().split()])
-dfs([], 0)
+get_all_seq([], 0)
