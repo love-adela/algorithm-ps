@@ -1,0 +1,5 @@
+4
+MOVC 1 0 5
+MOVC 2 0 10
+ADD 3 1 2
+SUB 4 1 2
