@@ -12,7 +12,6 @@ for _ in range(N):
     guitar.append(g)
     yes_or_no.append(yn)
 s = [[string for string in param] for param in yes_or_no]
-print(s)
 
 # 모든 기타로 연주할 수 있는 곡의 개수 구하기
 minimum = set()
@@ -24,10 +23,13 @@ for i in range(N):
 # 기타로 구할 수 있는 모든 조합 구하기
 for i in range(1, len(guitar)+1):
     cases.append(list(combinations(guitar, i)))
+print(cases)
 
 # 각 기타로 연주할 수 있는 곡의 개수 구하기
-for i in range(len(cases)):
-    for j in range(cases[i]):
-        if s[i][j] == 'Y':
-            
+print(s)
+temp = dict()
+for combination in cases: # 하나짜리, 두개짜리, 세개짜리, 네개짜리
+    print(combination)
+
+
         
