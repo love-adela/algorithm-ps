@@ -6,7 +6,7 @@ data = sorted([float(read())*10 for _ in range(N)])
 trimmed_data = data[K:N-K]
 
 def get_trimmed_mean():
-    answer = sum(trimmed_data) / (N-K*2)
+    answer = sum(trimmed_data) / len(trimmed_data)
     return '{:.2f}'.format(round(answer*0.1, 2))
 
 def get_adjusted_mean():
