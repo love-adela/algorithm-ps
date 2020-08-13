@@ -6,10 +6,9 @@ def get_last_date(y:int, m:int)->int:
         return 31 
     elif m == 2:
         return 29 if is_leap_year(y) else 28 
-    else:
-        return 30 
+    return 30 
 
-def is_date_overflow(year:int, month:int, date:int):
+def is_date_overflow(year:int, month:int, date:int)->bool:
     return date > get_last_date(year, month)
     
 date_str, delta_days = input().split()
