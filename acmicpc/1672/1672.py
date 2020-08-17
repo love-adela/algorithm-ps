@@ -1,15 +1,33 @@
-sequence = {'AA': 'A', 'AG': 'C', 'AC': 'A', 'AT': 'G',
-            'GA': 'C', 'GG': 'G', 'GC': 'T', 'GT': 'A',
-            'CA': 'A', 'CG': 'T', 'CC': 'C', 'CT': 'G',
-            'TA': 'G', 'TG': 'A', 'TC': 'G', 'TT': 'T'}
+def convert_base(last_two_bases:list)->str:
+    m, n = last_two_bases[0], last_two_bases[1]
+    if m == 'A' and n == 'A': 
+        return 'A'
+    elif (m == 'A' and n == 'G') or (m == 'G' and n == 'A'):
+        return 'C'
+    elif (m == 'A' and n == 'C') or (m == 'C' and n == 'A'):
+        return 'A'
+    elif (m == 'A' and n == 'T') or (m == 'T' and n == 'A'):
+        return 'G'
+    elif m == 'G' and n == 'G':
+        return 'G'
+    elif (m == 'G' and n == 'C') or (m == 'C' and n == 'G'):
+        return 'T'
+    elif (m == 'G' and n == 'T') or (m == 'T' and n == 'G'):
+        return 'A'
+    elif m == 'C' and n == 'C':
+        return 'C'
+    elif (m == 'C' and n == 'T') or (m == 'T' and n == 'C'):
+        return 'G'
+    else:
+        return 'T'
 
-N = int(input())
-dna = input()
+def main(base_list):
+    if len(base_list) == 1:
+        return ''.join(base_list)
+    bases = base_list[:-2]
+    bases += [convert_base(base_list[-2:])]
+    return main(bases)
 
-def get_sequence(dna):
-    if len(dna) < 2:
-        return dna
-    base = dna[-1] + dna[-2] 
-    dna = dna[:-2] + sequence[base]
-    return get_sequence(dna)
-print(get_sequence(dna))
+_ = int(input())
+dna = list(input())
+print(main(dna))
