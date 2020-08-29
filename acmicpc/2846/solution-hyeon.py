@@ -2,10 +2,13 @@ N = int(input())
 heights = [*map(int, input().split()), 0]
 
 local_min = heights[0]
-def for_each(i):
-    global local_min
-    ret = heights[i] - local_min
-    local_min = heights[i+1]
-    return ret
+maximum = 0
 
-print(max(for_each(i) for i in range(N) if heights[i+1] <= heights[i]))
+for i in range(N):
+    if heights[i+1] <= heights[i]:
+        current = heights[i] - local_min
+        if current > maximum:
+            maximum = current
+        local_min = heights[i+1]
+
+print(maximum)
