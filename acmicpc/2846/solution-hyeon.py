@@ -1,18 +1,11 @@
 N = int(input())
-heights = [int(param) for param in input().split()]
+heights = [*map(int, input().split()), 0]
 
-current_sub = [heights[0]] 
-last = heights[0]
-maximum = 0
+local_min = heights[0]
+def for_each(i):
+    global local_min
+    ret = heights[i] - local_min
+    local_min = heights[i+1]
+    return ret
 
-for item in heights[1:]:
-    if item <= last:
-        diff = current_sub[-1] - current_sub[0]
-        maximum = max(maximum, diff)
-        current_sub = []
-    current_sub.append(item)
-    last = item
-
-diff = current_sub[-1] - current_sub[0]
-maximum = max(maximum, diff)
-print(maximum)
+print(max(for_each(i) for i in range(N) if heights[i+1] <= heights[i]))
