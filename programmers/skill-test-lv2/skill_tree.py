@@ -1,3 +1,6 @@
+# https://programmers.co.kr/learn/courses/30/lessons/49993
+# 스킬트리
+
 def is_validate(item:str, string:str)->bool:
     chr_list = [c for c in item if c in string]
     check_list = []
