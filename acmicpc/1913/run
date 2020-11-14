@@ -1,0 +1,5 @@
+#!/usr/bin/env python3
+for i in range(1, 5):
+    print(f'앞으로 {i}칸 전진하세요')
+    print(f'앞으로 {i}칸 전진하세요')
+    print('우회전 하세요')
