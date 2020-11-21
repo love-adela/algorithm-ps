@@ -5,7 +5,7 @@ def solution(num:list)->list:
         for j in range(len(num)):
             if i != j:
                 answer.add(num[i] + num[j])
-    return sorted(list(map(int, answer)))
+    return sorted(list(answer))
 
 # Test
 # numbers = [2,1,3,4,1] # result = [2,3,4,5,6,7]
