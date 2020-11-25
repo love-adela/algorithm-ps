@@ -6,9 +6,7 @@ def solution(board, moves):
             if board[i][move -1] != 0:
                 res = board[i][move-1]
                 board[i][move-1] = 0
-                if len(stack) == 0:
-                    stack.append(res)
-                elif len(stack) > 0 and res != stack[-1]:
+                if len(stack) == 0 or res != stack[-1]:
                     stack.append(res)
                 else:
                     cnt += 1
