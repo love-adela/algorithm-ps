@@ -15,8 +15,4 @@ m3 = result // 60
 result %= 60
 s3 = result
 
-h3 = str(format(h3, '02'))
-m3 = str(format(m3, '02'))
-s3 = str(format(s3, '02'))
-
-print(f'{h3}:{m3}:{s3}')
+print(f"{h3:02d}:{m3:02d}:{s3:02d}")
